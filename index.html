@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f5">
+<title>A Little Birthday Magic ✨</title>
+<style>
+:root{--pink:#f7b8cf;--rose:#e98eae;--lav:#c9b8f2;--cream:#fffaf0;--mint:#c9eadc;--ink:#59485a;--muted:#8e7d8e;--shadow:0 18px 55px #a77a9630}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;background:radial-gradient(circle at 15% 10%,#ffe0eb 0,transparent 32%),radial-gradient(circle at 90% 20%,#e9e0ff 0,transparent 30%),linear-gradient(135deg,#fff9f1,#fff1f6 55%,#f3efff);overflow-x:hidden}
+button,input,textarea{font:inherit}button{cursor:pointer;border:0}.wrap{width:min(960px,92vw);margin:auto;padding:28px 0 70px}.topline{text-align:center;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#a88da5}.progress{height:6px;background:#ffffffa8;border-radius:99px;overflow:hidden;margin:16px auto 28px;max-width:440px}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--lav));transition:width .5s}
+.panel{display:none;animation:rise .65s cubic-bezier(.2,.8,.2,1) both}.panel.active{display:block}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card{position:relative;background:#ffffffc9;border:1px solid #fff;box-shadow:var(--shadow);border-radius:30px;padding:clamp(24px,5vw,52px);text-align:center;backdrop-filter:blur(12px);overflow:hidden}.eyebrow{color:#b17d9b;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}.title{font-family:Georgia,serif;font-weight:500;font-size:clamp(2.5rem,8vw,5.4rem);line-height:1.02;margin:12px 0;color:#755b78}.title em{color:#df8eae;font-weight:500}.sub{color:var(--muted);line-height:1.7;max-width:590px;margin:12px auto 26px}.btn{padding:14px 23px;border-radius:999px;background:linear-gradient(120deg,#eea8c2,#c7b7ee);color:white;font-weight:800;box-shadow:0 8px 22px #c38eae42;transition:.2s}.btn:hover{transform:translateY(-2px);filter:saturate(1.1)}.btn.secondary{background:#fff;color:#9b7594;border:1px solid #f0dce9;box-shadow:none}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}.tiny{font-size:.82rem;color:#a18fa0}.sparkle{position:absolute;color:#e8a9c3;animation:twinkle 2.3s infinite alternate}@keyframes twinkle{to{transform:scale(1.35) rotate(20deg);opacity:.4}}
+/* intro */
+.hero-art{height:190px;display:grid;place-items:center;position:relative;margin:4px auto 10px}.gift{font-size:110px;filter:drop-shadow(0 15px 12px #c88aa344);animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}
+.float{position:absolute;font-size:27px;animation:bob 4s ease-in-out infinite}.f1{left:18%;top:15%}.f2{right:18%;top:25%;animation-delay:.8s}.f3{left:27%;bottom:8%;animation-delay:1.3s}.f4{right:27%;bottom:2%;animation-delay:.5s}
+/* cake */
+.cake-area{height:290px;display:grid;place-items:center;position:relative}.cake{position:relative;width:230px;height:170px;margin-top:45px}.cake-top{position:absolute;top:28px;left:0;width:230px;height:65px;border-radius:50%;background:#fff0f4;border:5px solid #f3b5cb;z-index:3}.cake-body{position:absolute;top:58px;left:8px;width:214px;height:100px;background:linear-gradient(90deg,#f5b4c8,#ffe0e9);border-radius:0 0 22px 22px;box-shadow:inset 0 -12px #eaa0ba}.icing{position:absolute;top:75px;left:8px;width:214px;height:30px;z-index:4;border-radius:0 0 18px 18px;background:radial-gradient(circle at 20px 0,#fff7fa 15px,transparent 16px) 0 0/42px 36px repeat-x}.candle{position:absolute;z-index:5;left:105px;top:-24px;width:20px;height:58px;border-radius:7px;background:repeating-linear-gradient(135deg,#fff 0 7px,#d9c7f5 7px 13px)}.flame{position:absolute;left:4px;top:-27px;width:13px;height:22px;border-radius:60% 40% 60% 40%;background:#ffbd59;box-shadow:0 0 24px #ffc66e;transform:rotate(8deg);animation:flicker .5s infinite alternate}.flame.out{display:none}@keyframes flicker{to{transform:rotate(-8deg) scale(.85)}}.cake-plate{position:absolute;bottom:35px;width:280px;height:22px;background:#fff;border-radius:50%;box-shadow:0 9px 18px #9d75932b}
+.balloon-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:32px auto 12px;max-width:650px}.balloon{height:145px;position:relative;background:var(--b);border-radius:50% 50% 46% 46%;box-shadow:inset -10px -12px #0000000c,0 12px 20px #a77a9622;transition:.25s;animation:sway 3s ease-in-out infinite}.balloon:before{content:"";position:absolute;bottom:-10px;left:calc(50% - 7px);border-left:7px solid transparent;border-right:7px solid transparent;border-top:12px solid var(--b)}.balloon:after{content:"";position:absolute;top:100%;left:50%;height:42px;border-left:1px solid #bda7b9}.balloon span{font-size:1.8rem;display:block;margin-top:45px}.balloon.popped{transform:scale(.05);opacity:0;pointer-events:none}@keyframes sway{50%{transform:rotate(4deg) translateY(-5px)}}
+.reason{min-height:84px;padding:20px;border-radius:20px;background:#fff8fc;color:#86647f;border:1px dashed #e8c5d7;display:grid;place-items:center;font-family:Georgia,serif;font-size:1.2rem;line-height:1.5;margin:18px auto;max-width:620px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:25px auto;max-width:720px}.photo{aspect-ratio:4/5;background:linear-gradient(145deg,#ffe4ee,#e9e1ff);border:7px solid white;border-radius:14px;box-shadow:0 8px 20px #9f799326;overflow:hidden;position:relative;transform:rotate(var(--r))}.photo img{width:100%;height:100%;object-fit:cover}.photo .placeholder{height:100%;display:grid;place-items:center;font-size:2.4rem;color:#b58da9}.photo small{position:absolute;bottom:0;left:0;right:0;padding:8px;background:#fffD;color:#80677e}.upload{display:inline-flex;align-items:center;gap:8px;padding:11px 17px;border:1px dashed #d9b5cb;border-radius:99px;color:#98748f;background:#fff9fc}.upload input{display:none}
+.letter{max-width:650px;margin:24px auto 0;padding:30px 28px;text-align:left;background:#fffdf8;border-radius:8px;box-shadow:0 12px 30px #9f799326;position:relative;font-family:Georgia,serif;line-height:1.9;color:#776477}.letter:before{content:"";position:absolute;inset:12px;border:1px solid #f1dce5;pointer-events:none}.letter h3{text-align:center;color:#d48eaa;font-weight:500;font-size:1.7rem}.letter p{white-space:pre-wrap}.final-hearts{font-size:2.2rem;letter-spacing:.3em;animation:heart 1.2s infinite alternate}@keyframes heart{to{transform:scale(1.08)}}
+footer{text-align:center;margin-top:25px;color:#a28fa0;font-size:.8rem}
+@media(max-width:600px){.balloon-grid{gap:7px}.balloon{height:105px}.balloon span{margin-top:32px;font-size:1.35rem}.gallery{gap:8px}.photo{border-width:4px}.cake-area{transform:scale(.9)}.card{border-radius:24px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topline">a little surprise, made with love ♡</div>
+  <div class="progress"><span id="progress"></span></div>
+
+  <section class="panel active" id="p0">
+    <div class="card">
+      <span class="sparkle" style="top:9%;left:9%">✦</span><span class="sparkle" style="top:18%;right:10%">✧</span>
+      <div class="eyebrow">today is all about you</div>
+      <div class="hero-art"><span class="float f1">✿</span><span class="float f2">♡</span><span class="float f3">✧</span><span class="float f4">🌷</span><div class="gift">🎁</div></div>
+      <h1 class="title">Happy Birthday,<br><em id="heroName">Sunshine</em>!</h1>
+      <p class="sub">A tiny corner of the internet, filled with big love, little memories, and a few surprises just for you.</p>
+      <div class="actions"><button class="btn" onclick="startBirthday()">Open your surprise ✨</button><button class="btn secondary" id="musicBtn" onclick="toggleMusic()">♫ Music on</button></div>
+      <p class="tiny" style="margin-top:18px">made especially for you ♡</p>
+    </div>
+  </section>
+
+  <section class="panel" id="p1">
+    <div class="card">
+      <div class="eyebrow">first, make a wish</div><h2 class="title" style="font-size:clamp(2.3rem,7vw,4rem)">One little wish <em>for you</em></h2>
+      <p class="sub">Take a deep breath, close your eyes, and make your birthday wish. Then tap the candle to blow it out!</p>
+      <div class="cake-area"><div class="cake-plate"></div><div class="cake"><div class="candle" onclick="blow()"><div class="flame" id="flame"></div></div><div class="cake-body"></div><div class="cake-top"></div><div class="icing"></div></div></div>
+      <div id="wishHint" class="tiny">Tap the little flame 🕯️</div>
+      <div class="actions"><button class="btn" id="wishNext" onclick="go(2)" disabled>Continue to your surprises</button></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p2">
+    <div class="card">
+      <div class="eyebrow">pop, pop, hooray!</div><h2 class="title" style="font-size:clamp(2.3rem,7vw,4rem)">Five little <em>reasons</em></h2>
+      <p class="sub">Pop each balloon to reveal a little reminder of how wonderful you are.</p>
+      <div class="balloon-grid" id="balloons"></div>
+      <div class="reason" id="reason">Your first lovely surprise is waiting inside a balloon ♡</div>
+      <div class="tiny" id="balloonCount">0 of 5 popped</div>
+      <div class="actions"><button class="btn" id="balloonNext" onclick="go(3)" disabled>See our memories</button></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p3">
+    <div class="card">
+      <div class="eyebrow">little moments, big feelings</div><h2 class="title" style="font-size:clamp(2.3rem,7vw,4rem)">Memory <em>lane</em></h2>
+      <p class="sub">A few snapshots worth keeping forever. Add your favourite photos below before sharing the page.</p>
+      <div class="gallery" id="gallery">
+        <div class="photo" style="--r:-3deg"><img src="images/photo-1.jpg" alt="Memory lane photo 1" loading="lazy"><small>Our favourite moment</small></div>
+        <div class="photo" style="--r:2deg"><img src="images/photo-2.jpg" alt="Memory lane photo 2" loading="lazy"><small>A little throwback</small></div>
+        <div class="photo" style="--r:-1deg"><img src="images/photo-3.jpg" alt="Memory lane photo 3" loading="lazy"><small>A memory to keep</small></div>
+        <div class="photo" style="--r:2deg"><img src="images/photo-4.jpg" alt="Memory lane photo 4" loading="lazy"><small>The flower bouquet</small></div>
+        <div class="photo" style="--r:-2deg"><img src="images/photo-5.jpg" alt="Memory lane photo 5" loading="lazy"><small>A lovely portrait</small></div>
+        <div class="photo" style="--r:1deg"><img src="images/photo-6.jpg" alt="Memory lane photo 6" loading="lazy"><small>A little heart-shaped keepsake</small></div>
+        <div class="photo" style="--r:-1deg"><img src="images/photo-7.jpg" alt="Memory lane photo 7" loading="lazy"><small>A childhood memory</small></div>
+      </div>
+      <p class="tiny">Seven little snapshots, kept here just for you. ♡</p>
+      <div class="actions"><button class="btn" onclick="go(4)">A letter for you 💌</button></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p4">
+    <div class="card">
+      <div class="eyebrow">a note from the heart</div><h2 class="title" style="font-size:clamp(2.3rem,7vw,4rem)">Just for <em>you</em></h2>
+      <div class="letter" style="font-family:'Segoe Print','Bradley Hand','Comic Sans MS',cursive">
+        <h3 style="font-family:'Segoe Print','Bradley Hand','Comic Sans MS',cursive">Dear <span id="letterName">Shruthoo</span>,</h3>
+        <p id="letterText">Happy 18th birthday, Shruthoo! ♡
+
+I don't really know where to begin, but I wanted to make this little surprise for you and tell you something I've carried in my heart.
+
+First of all, thank you. Thank you for everything you did, for the time we shared, and for giving me some genuinely wonderful memories. Even though things didn't turn out the way I once imagined, I will never look back at that time as something meaningless. I was happy with you, and I'm grateful I got to experience those moments.
+
+Do you remember your 17th birthday last year? I still think about the flower bouquet and those 17 letters we made for your 17th birthday. I hope you remember it too. It was such a special little memory, and I couldn't let your 18th birthday pass without remembering it.
+
+I still remember our first date, too. Little details like that stay with me more than you might realise. And that light-pink kurta — I don't know why, but the memory of you in it has a special place in my mind. Sometimes it's the simplest moments that become our favourite memories.
+
+You have always been such an empathetic and genuinely cute person. And, of course, such a nerd — that's one of the things that makes you, you. I hope you never lose that lovely part of yourself.
+
+This year without you has felt like decades sometimes. There have been ordinary days when a memory suddenly comes back, and for a moment it feels like it all happened yesterday. I still listen to the playlist you made, “Ruse and Caper”. Honestly, I listen to it every day. The songs bring back memories, and I guess a part of me still likes keeping those little pieces close.
+
+I don't know the exact reason things ended between us, and maybe I never will. I'm not writing this to question your decision or make you feel bad about anything. I respect that life moves in its own direction. I just wanted you to know that what we had mattered to me, and that I truly appreciate the time you gave me.
+
+There's one thing I've wondered, though: do you ever miss me, even a little, or have I become someone you barely remember since last year? You don't have to answer if you don't want to. I just wanted to ask honestly, once.
+
+More than anything, I hope you are happy. Please take care of yourself, smile often, and don't let the silly little things make you cry. You deserve kindness, peace, and all the beautiful things life has waiting for you. Whatever happens, I hope this year brings you people and moments that make your heart feel safe and happy.
+
+And, Shruthoo, I still love you, and I think a part of me always will. I'm not saying that to expect anything from you or to change anything. It's simply the truth of how I feel, and I wanted to be honest about it.
+
+Happy 18th birthday once again. Thank you for being a beautiful chapter of my life. I hope this new chapter of yours is full of laughter, courage, lovely surprises, and everything your heart wishes for.
+
+With love,</p>
+        <p style="text-align:right;color:#d18eaa;font-family:'Segoe Print','Bradley Hand','Comic Sans MS',cursive">Yours roasted Rohithaa ♡</p></div>
+      <div class="actions"><button class="btn" onclick="go(5)">One last surprise ✨</button></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p5">
+    <div class="card">
+      <div class="eyebrow">and one more thing…</div><div class="hero-art" style="height:150px"><div class="gift">💐</div></div>
+      <h2 class="title">You deserve all the <em>magic.</em></h2>
+      <div class="final-hearts">♡ ✿ ♡</div>
+      <p class="sub">May your days be soft, your heart be full, and your year be sprinkled with a thousand reasons to smile.</p>
+      <h2 style="font-family:Georgia,serif;font-weight:500;color:#d58eaa;font-size:2rem">Happy Birthday, <span id="finalName">Sunshine</span>! 🎂</h2>
+      <div class="actions"><button class="btn" onclick="confettiBurst()">Celebrate again 🎉</button><button class="btn secondary" onclick="go(0)">Replay the surprise ↺</button></div>
+      <p class="tiny" style="margin-top:20px">with love, always ♡</p>
+    </div>
+  </section>
+  <footer>made with a little bit of code & a whole lot of love ♡</footer>
+</div>
+<audio id="birthdaySong" src="The Metro Proposal - Sai Abhyankkar - MassTamilan.mp3" preload="auto" loop></audio>
+<script>
+// PERSONALISE THESE FOUR VALUES BEFORE UPLOADING
+const CONFIG = {
+  recipient: "Shruthoo",
+  sender: "Yours roasted Rohithaa",
+  reasons: [
+    "You make ordinary days feel a little more magical.",
+    "Your smile can brighten the room.",
+    "You have a beautiful way of caring for others.",
+    "You make memories worth holding on to.",
+    "The world is better with you in it. ♡"
+  ]
+};
+let current=0, popped=0, musicOn=false, audioCtx=null;
+const $=id=>document.getElementById(id);
+function init(){
+  ["heroName","letterName","finalName"].forEach(id=>$(id).textContent=CONFIG.recipient);
+  $("senderName").textContent=CONFIG.sender;
+  const grid=$("balloons"), colors=["#f6b6cf","#cbbcf2","#b9e4d5","#ffd49c","#b8dce9"];
+  CONFIG.reasons.slice(0,5).forEach((_,i)=>{const b=document.createElement("button");b.className="balloon";b.style.setProperty("--b",colors[i]);b.style.animationDelay=(i*.18)+"s";b.setAttribute("aria-label","Pop balloon "+(i+1));b.innerHTML="<span>♡</span>";b.onclick=()=>pop(b,i);grid.appendChild(b)});
+  updateProgress();
+}
+function go(n){$("p"+current).classList.remove("active");current=n;$("p"+current).classList.add("active");updateProgress();window.scrollTo({top:0,behavior:"smooth"});if(n===5)confettiBurst()}
+function updateProgress(){$("progress").style.width=(current/5*100)+"%"}
+function blow(){if($("flame").classList.contains("out"))return;$("flame").classList.add("out");$("wishHint").textContent="Your wish is on its way to the stars ✨";$("wishNext").disabled=false;confettiBurst()}
+function pop(el,i){if(el.classList.contains("popped"))return;el.classList.add("popped");$("reason").textContent=CONFIG.reasons[i]||"You are one of a kind. ♡";popped++;$("balloonCount").textContent=popped+" of 5 popped";if(popped===5){$("balloonNext").disabled=false;$("reason").textContent="All five reasons — and there are a million more. ♡"}}
+const input=$("photoInput");input.addEventListener("change",e=>{const files=[...e.target.files].slice(0,3);if(!files.length)return;const gallery=$("gallery");gallery.innerHTML="";files.forEach((file,i)=>{const url=URL.createObjectURL(file),d=document.createElement("div");d.className="photo";d.style.setProperty("--r",[-3,2,-1][i]+"deg");const img=document.createElement("img");img.src=url;img.alt="Birthday memory "+(i+1);d.appendChild(img);gallery.appendChild(d)})});
+function startBirthday(){
+  go(1);
+  const song=$("birthdaySong");
+  song.volume=0.65;
+  song.play().then(()=>{$("musicBtn").textContent="♫ Pause music";musicOn=true;})
+    .catch(()=>{$("musicBtn").textContent="♫ Tap for music";musicOn=false;});
+}
+function toggleMusic(){
+  const song=$("birthdaySong");
+  if(song.paused){
+    song.play().then(()=>{musicOn=true;$("musicBtn").textContent="♫ Pause music";})
+      .catch(()=>{$("musicBtn").textContent="♫ Tap for music";});
+  }else{
+    song.pause();musicOn=false;$("musicBtn").textContent="♫ Play music";
+  }
+}
+function confettiBurst(){const symbols=["✦","✧","♡","✿","·"];for(let i=0;i<45;i++){const s=document.createElement("span");s.textContent=symbols[Math.floor(Math.random()*symbols.length)];s.style.cssText=`position:fixed;z-index:99;left:${Math.random()*100}vw;top:-25px;color:${["#e99bb8","#b8a5e9","#e9c17f","#9acdb9"][i%4]};font-size:${12+Math.random()*18}px;pointer-events:none;transition:transform ${2+Math.random()*2}s linear,opacity 3s;`;document.body.appendChild(s);requestAnimationFrame(()=>{s.style.transform=`translate(${(Math.random()-.5)*160}px,${window.innerHeight+80}px) rotate(${Math.random()*500}deg)`;s.style.opacity="0"});setTimeout(()=>s.remove(),4300)}}
+init();
+</script>
+</body>
+</html>
