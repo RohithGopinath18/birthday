@@ -147,7 +147,7 @@ let current=0, popped=0, musicOn=false, audioCtx=null;
 const $=id=>document.getElementById(id);
 function init(){
   ["heroName","letterName","finalName"].forEach(id=>$(id).textContent=CONFIG.recipient);
-  $("senderName").textContent=CONFIG.sender;
+
   const grid=$("balloons"), colors=["#f6b6cf","#cbbcf2","#b9e4d5","#ffd49c","#b8dce9"];
   CONFIG.reasons.slice(0,5).forEach((_,i)=>{const b=document.createElement("button");b.className="balloon";b.style.setProperty("--b",colors[i]);b.style.animationDelay=(i*.18)+"s";b.setAttribute("aria-label","Pop balloon "+(i+1));b.innerHTML="<span>♡</span>";b.onclick=()=>pop(b,i);grid.appendChild(b)});
   updateProgress();
@@ -156,7 +156,7 @@ function go(n){$("p"+current).classList.remove("active");current=n;$("p"+current
 function updateProgress(){$("progress").style.width=(current/5*100)+"%"}
 function blow(){if($("flame").classList.contains("out"))return;$("flame").classList.add("out");$("wishHint").textContent="Your wish is on its way to the stars ✨";$("wishNext").disabled=false;confettiBurst()}
 function pop(el,i){if(el.classList.contains("popped"))return;el.classList.add("popped");$("reason").textContent=CONFIG.reasons[i]||"You are one of a kind. ♡";popped++;$("balloonCount").textContent=popped+" of 5 popped";if(popped===5){$("balloonNext").disabled=false;$("reason").textContent="All five reasons — and there are a million more. ♡"}}
-const input=$("photoInput");input.addEventListener("change",e=>{const files=[...e.target.files].slice(0,3);if(!files.length)return;const gallery=$("gallery");gallery.innerHTML="";files.forEach((file,i)=>{const url=URL.createObjectURL(file),d=document.createElement("div");d.className="photo";d.style.setProperty("--r",[-3,2,-1][i]+"deg");const img=document.createElement("img");img.src=url;img.alt="Birthday memory "+(i+1);d.appendChild(img);gallery.appendChild(d)})});
+
 function startBirthday(){
   go(1);
   const song=$("birthdaySong");
